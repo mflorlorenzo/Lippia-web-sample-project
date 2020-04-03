@@ -6,7 +6,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class PhpTravelsAboutUsPage extends PageBasePhpTravels {
 
-    private final String ABOUT_TITLE = "hero-slogan";
+    private final String ABOUT_TITLE = "collapse-title";
 
     private WebElement stats() {
         return getWebElement(By.className(ABOUT_TITLE));
