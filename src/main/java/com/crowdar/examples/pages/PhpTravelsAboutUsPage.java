@@ -6,8 +6,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class PhpTravelsAboutUsPage extends PageBasePhpTravels {
 
+    private final String ABOUT_TITLE = "hero-slogan";
+
     private WebElement stats() {
-        return getWebElement(By.id("about us")); //buscar el about us del titulo
+        return getWebElement(By.className(ABOUT_TITLE));
     }
 
     public PhpTravelsAboutUsPage(RemoteWebDriver driver) {

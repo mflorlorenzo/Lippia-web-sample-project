@@ -22,4 +22,9 @@ public class PhpTravelsSteps extends PageSteps {
 
     }
 
+    @Then("The about us page is displayed")
+    public void statVerfication() {
+        Assert.assertTrue(!Injector._page(PhpTravelsAboutUsPage.class).getStats().isEmpty());
+
+    }
 }
