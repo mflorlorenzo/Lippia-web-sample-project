@@ -16,5 +16,10 @@ public class PhpTravelsSteps extends PageSteps {
         Injector._page(PhpTravelsHomePage.class).go();
     }
 
+    @When("The user goes to about us page")
+    public void aboutUs() {
+        Injector._page(PhpTravelsHomePage.class).clickAboutUsButton();
+
+    }
 
 }
