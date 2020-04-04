@@ -40,7 +40,7 @@ public class PhpTravelsSteps extends PageSteps {
 
     @Then("The search page list the available flights in those days")
     public void flightsListVerfication() {
-        //Assert.assertTrue(!Injector._page(PhpTravelsCarsPage.class).getStats().isEmpty());
+        //Assert.assertTrue(!Injector._page(PhpTravelsFlightPage.class).getStats().isEmpty());
 
     }
 }

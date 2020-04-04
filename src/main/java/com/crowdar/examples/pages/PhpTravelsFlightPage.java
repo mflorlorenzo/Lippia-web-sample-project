@@ -5,7 +5,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class PhpTravelsFlightPage extends PageBasePhpTravels {
 
-    private final String CONTAINER_FLIGHTS = "List";
+    // private final String CONTAINER_FLIGHTS = "List";
+
+    // private WebElement stats() {
+    //     return getWebElement(By.className(CONTAINER_FLIGHTS));
+    // }
 
     public PhpTravelsFlightPage(RemoteWebDriver driver) {
         super(driver);
@@ -16,5 +20,8 @@ public class PhpTravelsFlightPage extends PageBasePhpTravels {
         navigateToCompleteURL();
     }
 
+    // public String getStats() {
+    //     return stats();
+    // }
 
 }
