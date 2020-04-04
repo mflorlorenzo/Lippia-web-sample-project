@@ -6,6 +6,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class PhpTravelsHomePage extends PageBasePhpTravels {
 
     private final String ABOUT_BUTTON = "About Us";
+    private final String CARS_BUTTON = "Cars";
 
     public PhpTravelsHomePage(RemoteWebDriver driver) {
         super(driver);
@@ -16,8 +17,12 @@ public class PhpTravelsHomePage extends PageBasePhpTravels {
         navigateToCompleteURL();
     }
 
-     public void clickAboutUsButton() {
+    public void clickAboutUsButton() {
         clickElement(By.linkText(ABOUT_BUTTON));
-     }
+    }
+
+    public void clickCarsButton() {
+        clickElement(By.linkText(CARS_BUTTON));
+    }
 
 }

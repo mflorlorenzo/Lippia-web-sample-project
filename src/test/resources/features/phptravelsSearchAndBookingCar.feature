@@ -1,14 +1,14 @@
 Feature: Initial page
 
-@Test
+@Smoke
  Scenario: As a web user I want to navigate PHPTravel and search a Car between two days.
-   Given The user is in Cars page
-   When The user search a car betwteen two days
+   Given The user is in cars page
+   When The user search a car betwteen two days 
    Then The search page list the available cars in those days.
 
 @Test
  Scenario: As a web user I want to navigate PHPTravel and complete a cars booking process
-   Given The user is in Cars page
+   Given The user is incCars page
    When the user search a car between two days
    And  the user select the first result in the list
    And The user complete the booking car form
