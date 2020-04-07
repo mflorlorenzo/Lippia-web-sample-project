@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class PhpTravelsHomePage extends PageBasePhpTravels {
 
@@ -14,7 +17,15 @@ public class PhpTravelsHomePage extends PageBasePhpTravels {
     private final String FLIGHT_BUTTON = "flights";
     private final String CALENDAR_FLIGHT = "FlightsDateStart";
     private final String SEARCH_BUTTON = "Search";
-    private final String DAY_PICKER = "datepicker--cell.datepicker--cell-day";
+
+    private String afterTomorrowDate() {
+        Date today = new Date();               
+        SimpleDateFormat formattedDate = new SimpleDateFormat("yyyy-MM-dd");            
+        Calendar c = Calendar.getInstance();        
+        c.add(Calendar.DATE, 2);     
+        String afterTomorrow = (String)(formattedDate.format(c.getTime()));
+        return afterTomorrow;
+    }
 
     public PhpTravelsHomePage(RemoteWebDriver driver) {
         super(driver);
@@ -35,11 +46,7 @@ public class PhpTravelsHomePage extends PageBasePhpTravels {
     }
 
     public void selectCalendarDate() {
-        this.getDriver().findElement(By.id(CALENDAR_FLIGHT)).click();
-        //this.getDriver().findElement(By.cssSelector(DAY_PICKER)).click();
-        this.getDriver().findElement(By.xpath("(//input[@class='datepicker--cell datepicker--cell-day'])[6]"));
-        
-
+        this.getDriver().findElement(By.id(CALENDAR_FLIGHT)).sendKeys(afterTomorrowDate());
     }
 
     public void clickSearchButton() {
