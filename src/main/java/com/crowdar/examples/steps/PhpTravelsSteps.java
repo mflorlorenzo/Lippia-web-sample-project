@@ -4,7 +4,7 @@ import com.crowdar.core.Injector;
 import com.crowdar.core.PageSteps;
 import com.crowdar.examples.pages.PhpTravelsHomePage;
 import com.crowdar.examples.pages.PhpTravelsAboutUsPage;
-import com.crowdar.examples.pages.PhpTravelsFlightPage;
+import com.crowdar.examples.pages.PhpTravelsFlightsListPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -40,7 +40,7 @@ public class PhpTravelsSteps extends PageSteps {
 
     @Then("The search page list the available flights in those days")
     public void flightsListVerfication() {
-        //Assert.assertTrue(!Injector._page(PhpTravelsFlightPage.class).getStats().isEmpty());
+        Injector._page(PhpTravelsFlightsListPage.class).flightsList();
 
     }
 }

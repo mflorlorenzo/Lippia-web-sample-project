@@ -10,13 +10,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import org.openqa.selenium.JavascriptExecutor;      
 
 public class PhpTravelsHomePage extends PageBasePhpTravels {
 
     private final String ABOUT_BUTTON = "About Us";
     private final String FLIGHT_BUTTON = "flights";
     private final String CALENDAR_FLIGHT = "FlightsDateStart";
-    private final String SEARCH_BUTTON = "Search";
+    private final String SEARCH_BUTTON = "//form/div/div[3]/div[4]/button";
 
     private String afterTomorrowDate() {
         Date today = new Date();               
@@ -46,11 +47,19 @@ public class PhpTravelsHomePage extends PageBasePhpTravels {
     }
 
     public void selectCalendarDate() {
-        this.getDriver().findElement(By.id(CALENDAR_FLIGHT)).sendKeys(afterTomorrowDate());
+        //WebElement calendario = this.getDriver().findElement(By.id(CALENDAR_FLIGHT));
+
+        //Modificarlo para que tome el id de CALENDAR_FLIGHT y le fecha de afterTomorrowDate
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("document.getElementById('FlightsDateStart').value='2020-04-10';");
+
     }
 
     public void clickSearchButton() {
-        clickElement(By.linkText(SEARCH_BUTTON));
+        //Buscar el button por class o linkText no funciona ya que hay otros elementos arriba
+        WebElement button = new WebDriverWait(this.getDriver(), 10000).until(ExpectedConditions.elementToBeClickable(By.xpath(SEARCH_BUTTON)));
+        button.click();
+        
     }
 
 }
