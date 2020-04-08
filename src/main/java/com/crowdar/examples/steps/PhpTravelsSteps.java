@@ -56,6 +56,7 @@ public class PhpTravelsSteps extends PageSteps {
     public void completeBookFormFlight() {
         Injector._page(PhpTravelsFlightsBookFormPage.class).bookForm();
         Injector._page(PhpTravelsFlightsBookFormPage.class).completeBookingForm();
+        //Injector._page(PhpTravelsFlightsBookFormPage.class).submitBooking();
     }
 
     
