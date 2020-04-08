@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Date;
@@ -59,7 +58,6 @@ public class PhpTravelsHomePage extends PageBasePhpTravels {
         //Buscar el button por class o linkText no funciona ya que hay otros elementos arriba
         WebElement button = new WebDriverWait(this.getDriver(), 10000).until(ExpectedConditions.elementToBeClickable(By.xpath(SEARCH_BUTTON)));
         button.click();
-        
     }
 
 }

@@ -5,6 +5,7 @@ import com.crowdar.core.PageSteps;
 import com.crowdar.examples.pages.PhpTravelsHomePage;
 import com.crowdar.examples.pages.PhpTravelsAboutUsPage;
 import com.crowdar.examples.pages.PhpTravelsFlightsListPage;
+import com.crowdar.examples.pages.PhpTravelsFlightsBookFormPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -43,4 +44,19 @@ public class PhpTravelsSteps extends PageSteps {
         Injector._page(PhpTravelsFlightsListPage.class).flightsList();
 
     }
+
+    @Then("The user select the first result in the list")
+    public void bookFlight() {
+        Injector._page(PhpTravelsFlightsListPage.class).flightsList();
+        Injector._page(PhpTravelsFlightsListPage.class).selectFlight();
+
+    }
+
+    @Then("The user complete the booking flight form")
+    public void completeBookFormFlight() {
+        Injector._page(PhpTravelsFlightsBookFormPage.class).bookForm();
+        Injector._page(PhpTravelsFlightsBookFormPage.class).completeBookingForm();
+    }
+
+    
 }
